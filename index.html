@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Kintsugi Process - Even broken things can shine</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* --- RESET & VARIABLES --- */
         * {
@@ -16,41 +15,19 @@
         :root {
             --gold-base: #d4af37;
             --gold-shine: #f4d03f;
-            --gold-dark: #aa8a30;
+            --gold-dark: #8b7355;
             --text-dark: #2c2c2c;
             --text-light: #f0f0f0;
-            --bg-cream: #fdfbf7; /* Creamy off-white */
-            --bg-taupe: #f2eee5; /* Slightly darker, warm beige */
+            --bg-white: #ffffff;
+            --bg-alt: #e6e1d3; /* High contrast warm taupe */
             --dark-section: #1a1a1a;
         }
 
         body {
-            font-family: 'Merriweather', serif;
+            font-family: 'Georgia', serif;
             color: var(--text-dark);
             line-height: 1.8;
             overflow-x: hidden;
-            background-color: var(--bg-cream);
-            /* Placeholder for Kintsugi line background - replace with your image */
-            background-image: url('https://www.transparenttextures.com/patterns/cream-pixels.png'); 
-            background-blend-mode: multiply;
-            position: relative;
-        }
-
-        /* Add Kintsugi lines as a pseudo-element for the whole body */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Placeholder for a Kintsugi vein image. Replace with your own. */
-            background-image: url('https://i.imgur.com/8y9g77V.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.15;
-            pointer-events: none;
-            z-index: -1;
         }
         
         .container {
@@ -59,63 +36,33 @@
             padding: 0 20px;
         }
 
-        /* --- TYPOGRAPHY & GOLD EFFECTS --- */
-        h1, h2, h3 {
-            font-family: 'Great Vibes', cursive; /* Handwritten script for titles */
-            font-weight: normal;
-            color: var(--gold-base);
-        }
-
-        h4 {
-            font-family: 'Merriweather', serif;
-            font-weight: 700;
-        }
-
-        /* Brushed Gold Text Effect */
-        .gold-brush {
-            background: linear-gradient(45deg, var(--gold-dark), var(--gold-base), var(--gold-shine), var(--gold-base), var(--gold-dark));
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: shine 4s linear infinite;
-        }
-
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
-
         /* --- HEADER (Large Logo) --- */
         header {
-            background: var(--bg-cream);
+            background: var(--bg-white);
             padding: 50px 0;
             text-align: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
             position: relative;
             z-index: 10;
-            border-bottom: 2px solid var(--gold-base);
         }
         
         .logo {
-            max-width: 500px;
+            max-width: 500px; /* Large size for readability */
             width: 100%;
             height: auto;
             animation: fadeIn 1s ease-in;
-            /* Add a subtle gold glow */
-            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
         }
 
         /* --- HERO SECTION --- */
         .hero {
             text-align: center;
-            padding: 60px 20px;
-            /* Dark background with gold dust effect */
+            padding: 40px 20px;
             background: linear-gradient(135deg, #2c2c2c 0%, #000000 100%);
             color: white;
             position: relative;
             overflow: hidden;
         }
         
-        /* Gold Dust Effect */
         .hero::before {
             content: '';
             position: absolute;
@@ -123,97 +70,51 @@
             left: 0;
             right: 0;
             bottom: 0;
-            /* Placeholder for gold dust image. Replace with your own. */
-            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-            opacity: 0.3;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
             animation: pulse 4s ease-in-out infinite;
         }
         
         .hero h1 {
-            font-size: 4.5em; /* Larger size for the script font */
+            font-size: 3em;
+            color: var(--gold-base);
+            background: linear-gradient(45deg, var(--gold-dark), var(--gold-base), var(--gold-shine), var(--gold-base), var(--gold-dark));
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shine 4s linear infinite;
             margin-bottom: 10px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
-        .hero h2 { font-family: 'Merriweather', serif; font-size: 1.4em; font-weight: 300; color: #f0f0f0; margin-bottom: 0; }
-        .tagline { font-family: 'Merriweather', serif; font-size: 1.2em; color: var(--gold-base); font-style: italic; margin-top: 15px; }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .hero h2 { font-size: 1.4em; font-weight: 300; color: #f0f0f0; margin-bottom: 0; }
+        .tagline { font-size: 1.1em; color: var(--gold-base); font-style: italic; margin-top: 15px; }
 
         /* --- SECTIONS --- */
-        section {
-            padding: 80px 20px;
-            position: relative;
-        }
-
-        /* Alternating Section Colors with Gold Dust graphical element */
-        section:nth-of-type(odd) {
-            background-color: var(--bg-cream);
-        }
+        section { padding: 80px 20px; }
         
-        section:nth-of-type(even) {
-            background-color: var(--bg-taupe);
-            border-top: 1px solid var(--gold-base);
-            border-bottom: 1px solid var(--gold-base);
-        }
-        
-        /* Add gold dust graphic to sections */
-        section::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 300px;
-            height: 150px;
-            /* Placeholder for gold dust brush stroke. Replace with your own. */
-            background-image: url('https://i.imgur.com/3Z6w96D.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: bottom right;
-            opacity: 0.4;
-            pointer-events: none;
-        }
+        section:nth-of-type(odd) { background-color: var(--bg-white); }
+        section:nth-of-type(even) { background-color: var(--bg-alt); border-top: 1px solid #d4af3733; border-bottom: 1px solid #d4af3733; }
 
         section h2 {
-            font-size: 3.5em;
-            text-align: center;
+            font-size: 2.5em;
+            color: var(--text-dark);
             margin-bottom: 40px;
+            text-align: center;
             position: relative;
-            padding-bottom: 20px;
         }
         
-        /* Kintsugi Line under titles */
         section h2::after {
             content: '';
             display: block;
-            width: 150px;
-            height: 15px;
-            /* Placeholder for a single Kintsugi line graphic. */
-            background-image: url('https://i.imgur.com/8y9g77V.png');
-            background-size: cover;
-            background-position: center;
-            margin: 20px auto 0;
-            opacity: 0.8;
-        }
-
-        /* --- BUTTONS (View More Style) --- */
-        button, .cta-button {
-            padding: 15px 40px;
-            /* Brushed gold gradient background */
-            background: linear-gradient(to right, var(--gold-base), var(--gold-dark));
-            border: none;
-            border-radius: 30px; /* Rounded like the moodboard */
-            color: white;
-            font-family: 'Merriweather', serif;
-            font-weight: 700;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-        }
-        
-        button:hover, .cta-button:hover {
-            background: linear-gradient(to right, var(--gold-shine), var(--gold-base));
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+            width: 60px;
+            height: 3px;
+            background: var(--gold-base);
+            margin: 15px auto 0;
         }
 
         /* --- EMAIL SIGNUP --- */
@@ -221,43 +122,26 @@
             max-width: 650px;
             margin: 0 auto;
             padding: 40px;
-            background: var(--dark-section);
-            border: 2px solid var(--gold-base);
-            border-radius: 15px;
+            background: #1a1a1a;
+            border: 1px solid var(--gold-base);
+            border-radius: 8px;
             text-align: center;
             color: white;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
         }
         
-        /* Add Gold Dust to Email Box */
-        .email-signup::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Placeholder for gold dust image. */
-            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-            opacity: 0.2;
-            pointer-events: none;
+        .email-signup h3 { color: var(--gold-base); margin-bottom: 15px; }
+        .email-signup input { padding: 15px; width: 80%; border-radius: 4px; border: none; margin-bottom: 15px; }
+        .email-signup button {
+            padding: 15px 30px;
+            background: var(--gold-base);
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
         }
-        
-        .email-signup h3 { font-size: 2.5em; margin-bottom: 15px; }
-        .email-signup p { font-family: 'Merriweather', serif; }
-        .email-signup input {
-            padding: 15px;
-            width: 80%;
-            border-radius: 30px;
-            border: 1px solid var(--gold-base);
-            margin-bottom: 20px;
-            font-family: 'Merriweather', serif;
-            background: rgba(255,255,255,0.1);
-            color: white;
-        }
-        .email-signup input::placeholder { color: #ccc; }
+        .email-signup button:hover { background: var(--gold-shine); color: var(--text-dark); }
 
         /* --- WHO THIS IS FOR --- */
         .who-grid {
@@ -272,18 +156,16 @@
         .center-image-container img {
             width: 100%;
             border-radius: 12px;
-            /* Gold Border for images */
-            border: 3px solid var(--gold-base);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
-        .list-column h3 { margin-bottom: 20px; font-size: 2.2em; }
+        .list-column h3 { color: var(--gold-dark); margin-bottom: 20px; font-size: 1.5em; }
         
         .list-column ul { list-style: none; }
         .list-column ul li { margin-bottom: 15px; padding-left: 30px; position: relative; }
         
-        .list-column.for ul li::before { content: "✓"; color: var(--gold-base); position: absolute; left: 0; font-weight: bold; }
-        .list-column.not-for ul li::before { content: "✗"; color: var(--gold-dark); position: absolute; left: 0; font-weight: bold; }
+        .list-column.for ul li::before { content: "✓"; color: #6b8e23; position: absolute; left: 0; font-weight: bold; }
+        .list-column.not-for ul li::before { content: "✗"; color: #8b4513; position: absolute; left: 0; font-weight: bold; }
 
         /* --- RESOURCES (Podcasts & Music) --- */
         .links-grid {
@@ -295,60 +177,36 @@
         }
 
         .link-column h3 {
+            color: var(--gold-dark);
             margin-bottom: 20px;
-            font-size: 2.2em;
+            font-size: 1.5em;
         }
+
+        .link-column p { margin-bottom: 20px; font-size: 0.95em; color: #666; }
 
         .link-card {
             display: flex;
             align-items: center;
             background: white;
-            padding: 25px;
-            border-radius: 15px;
-            /* Gold border instead of left border */
-            border: 2px solid var(--gold-base);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold-base);
             text-decoration: none;
             color: inherit;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Brushed Gold hover effect for cards */
-        .link-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, var(--gold-base), var(--gold-dark));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 0;
         }
 
         .link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
-            border-color: transparent;
-        }
-        
-        .link-card:hover::before {
-            opacity: 0.1;
-        }
-        
-        .link-card:hover .link-icon {
-             filter: none;
-             transform: scale(1.1);
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left-color: var(--gold-dark);
         }
 
-        .link-icon { font-size: 30px; margin-right: 20px; color: var(--gold-base); transition: all 0.3s ease; z-index: 1; }
-        .link-info { z-index: 1; }
-        .link-info h4 { color: var(--text-dark); margin-bottom: 5px; font-size: 1.2em; }
-        .link-info p { color: #666; font-size: 0.95em; margin: 0; line-height: 1.4; }
+        .link-icon { font-size: 24px; margin-right: 20px; filter: grayscale(100%); }
+        .link-info h4 { color: var(--text-dark); margin-bottom: 5px; font-size: 1.1em; font-weight: bold; }
+        .link-info p { color: #666; font-size: 0.9em; margin: 0; line-height: 1.4; }
 
 
         /* --- COURSE FLOW IMAGE --- */
@@ -357,56 +215,22 @@
             margin-bottom: 60px;
             cursor: pointer;
         }
-        .zoom-hint { color: var(--gold-dark); font-family: 'Merriweather', serif; font-weight: 700; font-size: 1em; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
-        .flow-image-preview { max-width: 800px; width: 100%; border-radius: 12px; border: 3px solid var(--gold-base); transition: transform 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .flow-image-preview:hover { transform: scale(1.02); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2); }
+        .zoom-hint { color: var(--gold-dark); font-size: 0.9em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .flow-image-preview { max-width: 800px; width: 100%; border-radius: 8px; border: 2px solid var(--gold-base); transition: transform 0.3s ease; }
+        .flow-image-preview:hover { transform: scale(1.02); }
 
         /* --- ACCORDION STYLES --- */
-        .accordion-wrapper { max-width: 900px; margin: 0 auto 20px; }
+        .accordion-wrapper { max-width: 900px; margin: 0 auto 15px; }
         .accordion-btn {
-            background-color: white;
-            color: var(--text-dark);
-            cursor: pointer;
-            padding: 25px 30px;
-            width: 100%;
-            text-align: left;
-            border: 2px solid var(--gold-base);
-            border-radius: 15px;
-            outline: none;
-            transition: all 0.4s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Merriweather', serif;
-            position: relative;
-            overflow: hidden;
+            background-color: white; color: var(--text-dark); cursor: pointer; padding: 25px; width: 100%; text-align: left; border: none; outline: none; transition: 0.4s;
+            border-left: 5px solid var(--gold-base); border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center;
         }
-        
-        /* Brushed Gold hover effect */
-        .accordion-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, var(--gold-base), var(--gold-dark));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 0;
-        }
-        
-        .accordion-btn:hover::before, .accordion-btn.active::before {
-            opacity: 0.1;
-        }
-
-        .accordion-btn h4 { font-size: 1.3em; color: var(--text-dark); margin: 0; z-index: 1; }
-        .accordion-btn::after { content: '▼'; font-size: 1.2em; color: var(--gold-base); transition: transform 0.3s ease; z-index: 1; }
-        .accordion-btn.active::after { transform: rotate(180deg); }
-        .accordion-panel { padding: 0 30px; background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; margin-bottom: 0; border-radius: 0 0 15px 15px; border: 2px solid transparent; border-top: none; }
-        .accordion-btn.active + .accordion-panel { border-color: var(--gold-base); }
-        .accordion-panel .content-inner { padding: 30px 0; }
+        .accordion-btn h4 { font-size: 1.2em; color: var(--gold-dark); margin: 0; }
+        .accordion-btn::after { content: '+'; font-size: 20px; color: var(--gold-base); font-weight: bold; }
+        .accordion-btn.active { background-color: #fafafa; }
+        .accordion-btn.active::after { content: '-'; }
+        .accordion-panel { padding: 0 25px; background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; margin-bottom: 0; }
+        .accordion-panel .content-inner { padding: 25px 0; }
 
         /* --- PRICING GRID --- */
         .pricing-grid {
@@ -417,86 +241,56 @@
             margin: 0 auto;
         }
         .pricing-card {
-            background: white; padding: 50px 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border: 2px solid var(--gold-base); transition: transform 0.3s; position: relative; overflow: hidden;
+            background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border-top: 4px solid var(--gold-base); transition: transform 0.3s;
         }
-        /* Gold dust effect on pricing cards */
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            /* Placeholder for gold dust image. */
-            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-            opacity: 0.1;
-            pointer-events: none;
-        }
-        .pricing-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2); }
-        .pricing-card h4 { font-family: 'Great Vibes', cursive; font-size: 2.5em; margin-bottom: 10px; color: var(--gold-base); }
-        .price { font-size: 3em; font-weight: bold; margin: 20px 0; }
-        .pricing-list { text-align: left; margin-top: 30px; list-style: none; }
-        .pricing-list li { margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 1em; color: #555; }
-        .pricing-list li::before { content: "•"; color: var(--gold-base); position: absolute; left: 0; font-weight: bold; font-size: 1.2em; }
-        .premium-group { background: var(--bg-taupe); padding: 20px; border-radius: 12px; margin-top: 20px; text-align: left; border: 1px solid var(--gold-base); }
-        .premium-title { font-family: 'Merriweather', serif; font-size: 0.9em; text-transform: uppercase; color: var(--gold-dark); font-weight: bold; margin-bottom: 12px; letter-spacing: 1px; }
+        .pricing-card:hover { transform: translateY(-10px); }
+        .pricing-card h4 { font-size: 1.5em; margin-bottom: 10px; }
+        .price { font-size: 2.5em; color: var(--gold-base); font-weight: bold; margin: 20px 0; }
+        .pricing-list { text-align: left; margin-top: 20px; list-style: none; }
+        .pricing-list li { margin-bottom: 10px; padding-left: 20px; position: relative; font-size: 0.95em; color: #555; }
+        .pricing-list li::before { content: "•"; color: var(--gold-base); position: absolute; left: 0; font-weight: bold; }
+        .premium-group { background: var(--bg-alt); padding: 15px; border-radius: 8px; margin-top: 15px; text-align: left; }
+        .premium-title { font-size: 0.85em; text-transform: uppercase; color: var(--gold-dark); font-weight: bold; margin-bottom: 8px; }
 
         /* --- MODAL --- */
         .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
-        .modal-content { max-width: 90%; max-height: 90%; border-radius: 12px; border: 3px solid var(--gold-base); }
-        .close { position: absolute; top: 20px; right: 35px; color: var(--gold-base); font-size: 50px; font-weight: bold; cursor: pointer; transition: color 0.3s; }
-        .close:hover { color: var(--gold-shine); }
+        .modal-content { max-width: 90%; max-height: 90%; border-radius: 4px; }
+        .close { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
 
         /* --- FOOTER --- */
         footer {
-            background: var(--dark-section);
-            color: #aaa;
+            background: #121212;
+            color: #888;
             text-align: center;
-            padding: 80px 20px;
-            border-top: 5px solid var(--gold-base);
-            position: relative;
-        }
-        
-        /* Gold Dust Effect on Footer */
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* Placeholder for gold dust image. */
-            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-            opacity: 0.1;
-            pointer-events: none;
+            padding: 60px 20px;
+            border-top: 3px solid var(--gold-base);
         }
 
         .creator-note {
             max-width: 800px;
             margin: 0 auto 40px;
             padding-bottom: 30px;
-            border-bottom: 1px solid var(--gold-base);
+            border-bottom: 1px solid #333;
             font-size: 1.1em;
             line-height: 1.6;
             color: #ccc;
-            position: relative;
-        }
-        
-        .creator-note p strong {
-             color: var(--gold-base);
         }
 
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 900px) {
-            .who-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            /* Stack the Who This Is For section */
+            .who-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
             .center-image-container { order: -1; }
             .list-column { text-align: left; }
+
+            /* Stack the Resources Section */
             .links-grid { grid-template-columns: 1fr; gap: 30px; }
-            section { padding: 60px 20px; }
+            
+            section { padding: 50px 20px; }
             header { padding: 30px 0; }
-            .hero { padding: 40px 20px; }
-            .hero h1 { font-size: 3.5em; }
-            section h2 { font-size: 3em; }
+            .hero { padding: 30px 20px; }
+            .hero h1 { font-size: 2.2em; }
+            section h2 { font-size: 2em; }
         }
 
         @media (max-width: 600px) {
@@ -504,9 +298,6 @@
             .accordion-btn { padding: 20px; }
             .accordion-btn h4 { font-size: 1.1em; }
             .logo { max-width: 90%; }
-            h1.gold-brush { font-size: 3em; }
-            section h2.gold-brush { font-size: 2.5em; }
-            section::after { width: 200px; height: 100px; }
         }
     </style>
 </head>
@@ -520,7 +311,7 @@
 
     <div class="hero">
         <div class="container">
-            <h1 class="gold-brush">The Kintsugi Process</h1>
+            <h1>The Kintsugi Process</h1>
             <h2>An Online Workshop Community</h2>
             <p class="tagline">Even broken things can shine.</p>
         </div>
@@ -529,26 +320,26 @@
     <section>
         <div class="container">
             <div class="email-signup">
-                <h3 class="gold-brush">Join the Waitlist Anonymously</h3>
+                <h3>Join the Waitlist Anonymously</h3>
                 <p>We'll be launching a free founding cohort soon. Sign up to be notified.</p>
                 <input type="email" placeholder="Your email address" id="emailInput">
                 <button onclick="submitEmail()">Join Waitlist</button>
             </div>
             
-            <div style="max-width: 800px; margin: 60px auto; text-align: center; font-size: 1.3em;">
+            <div style="max-width: 800px; margin: 50px auto; text-align: center; font-size: 1.2em;">
                 <p><strong>This is true anonymity. Not therapy. Not coaching.</strong></p>
-                <p style="margin-top: 20px;">Socratic method guidance through self-reflection and somatic integration principles. Based on ancient wisdom and tried and true psychology practices.</p>
+                <p style="margin-top: 15px;">Socratic method guidance through self-reflection and somatic integration principles. Based on ancient wisdom and tried and true psychology practices.</p>
             </div>
         </div>
     </section>
 
     <section>
         <div class="container">
-            <h2 class="gold-brush">Who This Is For (And Who It's Not)</h2>
+            <h2>Who This Is For (And Who It's Not)</h2>
             
             <div class="who-grid">
                 <div class="list-column for">
-                    <h3 class="gold-brush">Who This Is For</h3>
+                    <h3>Who This Is For</h3>
                     <ul>
                         <li>People 1+ year post-rupture</li>
                         <li>Ready for self-accountability</li>
@@ -564,7 +355,7 @@
                 </div>
 
                 <div class="list-column not-for">
-                    <h3 class="gold-brush">Who This Is NOT For</h3>
+                    <h3>Who This Is NOT For</h3>
                     <ul>
                         <li>People still in active crisis mode</li>
                         <li>Those needing professional therapy</li>
@@ -579,11 +370,11 @@
 
     <section>
         <div class="container">
-            <h2 class="gold-brush">Learn More About The Process</h2>
+            <h2>Learn More About The Process</h2>
             
             <div class="links-grid">
                 <div class="link-column">
-                    <h3 class="gold-brush">Podcasts</h3>
+                    <h3>Podcasts</h3>
                     <p>These podcasts will give you an overview of the Kintsugi Process and help you understand if this journey is right for you.</p>
                     
                     <a href="https://copilot.microsoft.com/shares/podcasts/YRhAGqv2x9xpfzPTqyD3w" target="_blank" class="link-card">
@@ -604,7 +395,7 @@
                 </div>
 
                 <div class="link-column">
-                    <h3 class="gold-brush">Inspirational Music</h3>
+                    <h3>Inspirational Music</h3>
                     <p>These songs offer inspiration as well as a preview of personal AI collaboration with music creation for your own healing.</p>
                     
                     <a href="https://suno.com/s/8S85C8g0BYaSN8fa" target="_blank" class="link-card">
@@ -629,14 +420,14 @@
 
     <section>
         <div class="container">
-            <h2 class="gold-brush">The 12-Week Journey</h2>
+            <h2>The 12-Week Journey</h2>
 
             <div class="flow-trigger-container" onclick="openModal(this.querySelector('img'))">
                 <p class="zoom-hint">🔍 Click Diagram to Zoom</p>
                 <img src="https://raw.githubusercontent.com/simplerlifeao-pixel/kintsugi-images/main/The%20Kinsugi%20Process%20Flow%20Chart.png" alt="Course Flow" class="flow-image-preview">
             </div>
 
-            <div style="margin-top: 50px;">
+            <div style="margin-top: 40px;">
                 
                 <div class="accordion-wrapper">
                     <button class="accordion-btn">
@@ -788,7 +579,7 @@
 
     <section>
         <div class="container">
-            <h2 class="gold-brush">The Practices</h2>
+            <h2>The Practices</h2>
 
             <div class="accordion-wrapper">
                 <button class="accordion-btn">
@@ -797,7 +588,7 @@
                 <div class="accordion-panel">
                     <div class="content-inner">
                         <p><strong>Purpose:</strong> To embody responsibility, grief, and integration through a deliberate physical act.</p>
-                        <ul style="margin-left: 25px; margin-top: 20px;">
+                        <ul style="margin-left: 20px; margin-top: 15px;">
                             <li><strong>Step 1:</strong> Naming the Old Form ("This form could not hold the truth")</li>
                             <li><strong>Step 2:</strong> The Breaking (Recognition, not destruction)</li>
                             <li><strong>Step 3:</strong> Gathering the Pieces ("Nothing is excluded")</li>
@@ -816,7 +607,7 @@
                     <div class="content-inner">
                         <p><strong>Purpose:</strong> To orient awareness beyond ego, steady the nervous system, and consciously transition into the Kintsugi Pottery Ritual.</p>
                         <p><strong>Length:</strong> 12-15 minutes</p>
-                        <ul style="margin-left: 25px; margin-top: 20px;">
+                        <ul style="margin-left: 20px; margin-top: 15px;">
                             <li>Arriving & Settling the Mind</li>
                             <li>Finding The Witness</li>
                             <li>Visualizing The Vessel</li>
@@ -844,12 +635,12 @@
 
     <section>
         <div class="container">
-            <h2 class="gold-brush">Investment in Your Transformation</h2>
+            <h2>Investment in Your Transformation</h2>
             
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h4 class="gold-brush">Self-Paced Course</h4>
-                    <div class="price gold-brush">$697</div>
+                    <h4>Self-Paced Course</h4>
+                    <div class="price">$697</div>
                     <ul class="pricing-list">
                         <li>Recorded "perfect cohort" sessions</li>
                         <li>Full 12-week curriculum</li>
@@ -858,15 +649,15 @@
                     </ul>
                 </div>
                 
-                <div class="pricing-card" style="transform: scale(1.05); z-index: 2; border-width: 3px; box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);">
-                    <h4 class="gold-brush">Live Cohort Program</h4>
-                    <div class="price gold-brush">$1,997</div>
+                <div class="pricing-card" style="border-top: 6px solid var(--gold-base); transform: scale(1.02);">
+                    <h4>Live Cohort Program</h4>
+                    <div class="price">$1,997</div>
                     <ul class="pricing-list">
                         <li><strong>12-week live program</strong> (Small groups)</li>
                         <li>Weekly facilitated calls</li>
                     </ul>
 
-                    <div class="premium-group">
+                    <div class="premium-group" style="background-color: white;">
                         <div class="premium-title">Included Physical Tools</div>
                         <ul class="pricing-list" style="margin-top:0;">
                             <li>Physical Kintsugi gold repair kit</li>
@@ -875,7 +666,7 @@
                         </ul>
                     </div>
 
-                    <div class="premium-group">
+                    <div class="premium-group" style="background-color: white;">
                         <div class="premium-title">Digital & Support</div>
                         <ul class="pricing-list" style="margin-top:0;">
                             <li>Music Creation AI Platform Access</li>
@@ -887,8 +678,8 @@
                 </div>
                 
                 <div class="pricing-card">
-                    <h4 class="gold-brush">Mini-Courses</h4>
-                    <div class="price gold-brush">$97+</div>
+                    <h4>Mini-Courses</h4>
+                    <div class="price">$97+</div>
                     <ul class="pricing-list">
                         <li>Focused deep-dives</li>
                         <li>Standalone topics</li>
@@ -904,7 +695,7 @@
             
             <div class="creator-note">
                 <p>Built by a creator with lived experience of deep moral failure, incarceration, and years of intensive rehabilitation work. A dignified path to rebuilding identity.</p>
-                <p style="margin-top: 20px; font-weight: bold; font-size: 1.2em;" class="gold-brush">You're not paying for theory. You're investing in a proven process that has already worked.</p>
+                <p style="margin-top: 15px; font-weight: bold; color: var(--gold-base);">You're not paying for theory. You're investing in a proven process that has already worked.</p>
             </div>
 
             <p>Your privacy is absolute. We do not sell data.</p>

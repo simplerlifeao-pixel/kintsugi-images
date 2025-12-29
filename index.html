@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Kintsugi Process - Even broken things can shine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- RESET & VARIABLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --gold-base: #d4af37;
+            --gold-shine: #f4d03f;
+            --gold-dark: #aa8a30;
+            --text-dark: #2c2c2c;
+            --text-light: #f0f0f0;
+            --bg-cream: #fdfbf7; /* Creamy off-white */
+            --bg-taupe: #f2eee5; /* Slightly darker, warm beige */
+            --dark-section: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-color: var(--bg-cream);
+            /* Placeholder for Kintsugi line background - replace with your image */
+            background-image: url('https://www.transparenttextures.com/patterns/cream-pixels.png'); 
+            background-blend-mode: multiply;
+            position: relative;
+        }
+
+        /* Add Kintsugi lines as a pseudo-element for the whole body */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Placeholder for a Kintsugi vein image. Replace with your own. */
+            background-image: url('https://i.imgur.com/8y9g77V.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- TYPOGRAPHY & GOLD EFFECTS --- */
+        h1, h2, h3 {
+            font-family: 'Great Vibes', cursive; /* Handwritten script for titles */
+            font-weight: normal;
+            color: var(--gold-base);
+        }
+
+        h4 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+        }
+
+        /* Brushed Gold Text Effect */
+        .gold-brush {
+            background: linear-gradient(45deg, var(--gold-dark), var(--gold-base), var(--gold-shine), var(--gold-base), var(--gold-dark));
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        /* --- HEADER (Large Logo) --- */
+        header {
+            background: var(--bg-cream);
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            border-bottom: 2px solid var(--gold-base);
+        }
+        
+        .logo {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            animation: fadeIn 1s ease-in;
+            /* Add a subtle gold glow */
+            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            /* Dark background with gold dust effect */
+            background: linear-gradient(135deg, #2c2c2c 0%, #000000 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Gold Dust Effect */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* Placeholder for gold dust image. Replace with your own. */
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.3;
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        .hero h1 {
+            font-size: 4.5em; /* Larger size for the script font */
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .hero h2 { font-family: 'Merriweather', serif; font-size: 1.4em; font-weight: 300; color: #f0f0f0; margin-bottom: 0; }
+        .tagline { font-family: 'Merriweather', serif; font-size: 1.2em; color: var(--gold-base); font-style: italic; margin-top: 15px; }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        /* Alternating Section Colors with Gold Dust graphical element */
+        section:nth-of-type(odd) {
+            background-color: var(--bg-cream);
+        }
+        
+        section:nth-of-type(even) {
+            background-color: var(--bg-taupe);
+            border-top: 1px solid var(--gold-base);
+            border-bottom: 1px solid var(--gold-base);
+        }
+        
+        /* Add gold dust graphic to sections */
+        section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 150px;
+            /* Placeholder for gold dust brush stroke. Replace with your own. */
+            background-image: url('https://i.imgur.com/3Z6w96D.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        section h2 {
+            font-size: 3.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        /* Kintsugi Line under titles */
+        section h2::after {
+            content: '';
+            display: block;
+            width: 150px;
+            height: 15px;
+            /* Placeholder for a single Kintsugi line graphic. */
+            background-image: url('https://i.imgur.com/8y9g77V.png');
+            background-size: cover;
+            background-position: center;
+            margin: 20px auto 0;
+            opacity: 0.8;
+        }
+
+        /* --- BUTTONS (View More Style) --- */
+        button, .cta-button {
+            padding: 15px 40px;
+            /* Brushed gold gradient background */
+            background: linear-gradient(to right, var(--gold-base), var(--gold-dark));
+            border: none;
+            border-radius: 30px; /* Rounded like the moodboard */
+            color: white;
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        button:hover, .cta-button:hover {
+            background: linear-gradient(to right, var(--gold-shine), var(--gold-base));
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- EMAIL SIGNUP --- */
+        .email-signup {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 40px;
+            background: var(--dark-section);
+            border: 2px solid var(--gold-base);
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Add Gold Dust to Email Box */
+        .email-signup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Placeholder for gold dust image. */
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .email-signup h3 { font-size: 2.5em; margin-bottom: 15px; }
+        .email-signup p { font-family: 'Merriweather', serif; }
+        .email-signup input {
+            padding: 15px;
+            width: 80%;
+            border-radius: 30px;
+            border: 1px solid var(--gold-base);
+            margin-bottom: 20px;
+            font-family: 'Merriweather', serif;
+            background: rgba(255,255,255,0.1);
+            color: white;
+        }
+        .email-signup input::placeholder { color: #ccc; }
+
+        /* --- WHO THIS IS FOR --- */
+        .who-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px 1fr;
+            gap: 40px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .center-image-container img {
+            width: 100%;
+            border-radius: 12px;
+            /* Gold Border for images */
+            border: 3px solid var(--gold-base);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .list-column h3 { margin-bottom: 20px; font-size: 2.2em; }
+        
+        .list-column ul { list-style: none; }
+        .list-column ul li { margin-bottom: 15px; padding-left: 30px; position: relative; }
+        
+        .list-column.for ul li::before { content: "✓"; color: var(--gold-base); position: absolute; left: 0; font-weight: bold; }
+        .list-column.not-for ul li::before { content: "✗"; color: var(--gold-dark); position: absolute; left: 0; font-weight: bold; }
+
+        /* --- RESOURCES (Podcasts & Music) --- */
+        .links-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .link-column h3 {
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            /* Gold border instead of left border */
+            border: 2px solid var(--gold-base);
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Brushed Gold hover effect for cards */
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--gold-base), var(--gold-dark));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            border-color: transparent;
+        }
+        
+        .link-card:hover::before {
+            opacity: 0.1;
+        }
+        
+        .link-card:hover .link-icon {
+             filter: none;
+             transform: scale(1.1);
+        }
+
+        .link-icon { font-size: 30px; margin-right: 20px; color: var(--gold-base); transition: all 0.3s ease; z-index: 1; }
+        .link-info { z-index: 1; }
+        .link-info h4 { color: var(--text-dark); margin-bottom: 5px; font-size: 1.2em; }
+        .link-info p { color: #666; font-size: 0.95em; margin: 0; line-height: 1.4; }
+
+
+        /* --- COURSE FLOW IMAGE --- */
+        .flow-trigger-container {
+            text-align: center;
+            margin-bottom: 60px;
+            cursor: pointer;
+        }
+        .zoom-hint { color: var(--gold-dark); font-family: 'Merriweather', serif; font-weight: 700; font-size: 1em; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
+        .flow-image-preview { max-width: 800px; width: 100%; border-radius: 12px; border: 3px solid var(--gold-base); transition: transform 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .flow-image-preview:hover { transform: scale(1.02); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2); }
+
+        /* --- ACCORDION STYLES --- */
+        .accordion-wrapper { max-width: 900px; margin: 0 auto 20px; }
+        .accordion-btn {
+            background-color: white;
+            color: var(--text-dark);
+            cursor: pointer;
+            padding: 25px 30px;
+            width: 100%;
+            text-align: left;
+            border: 2px solid var(--gold-base);
+            border-radius: 15px;
+            outline: none;
+            transition: all 0.4s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Merriweather', serif;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Brushed Gold hover effect */
+        .accordion-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--gold-base), var(--gold-dark));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+        
+        .accordion-btn:hover::before, .accordion-btn.active::before {
+            opacity: 0.1;
+        }
+
+        .accordion-btn h4 { font-size: 1.3em; color: var(--text-dark); margin: 0; z-index: 1; }
+        .accordion-btn::after { content: '▼'; font-size: 1.2em; color: var(--gold-base); transition: transform 0.3s ease; z-index: 1; }
+        .accordion-btn.active::after { transform: rotate(180deg); }
+        .accordion-panel { padding: 0 30px; background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; margin-bottom: 0; border-radius: 0 0 15px 15px; border: 2px solid transparent; border-top: none; }
+        .accordion-btn.active + .accordion-panel { border-color: var(--gold-base); }
+        .accordion-panel .content-inner { padding: 30px 0; }
+
+        /* --- PRICING GRID --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pricing-card {
+            background: white; padding: 50px 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border: 2px solid var(--gold-base); transition: transform 0.3s; position: relative; overflow: hidden;
+        }
+        /* Gold dust effect on pricing cards */
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            /* Placeholder for gold dust image. */
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        .pricing-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2); }
+        .pricing-card h4 { font-family: 'Great Vibes', cursive; font-size: 2.5em; margin-bottom: 10px; color: var(--gold-base); }
+        .price { font-size: 3em; font-weight: bold; margin: 20px 0; }
+        .pricing-list { text-align: left; margin-top: 30px; list-style: none; }
+        .pricing-list li { margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 1em; color: #555; }
+        .pricing-list li::before { content: "•"; color: var(--gold-base); position: absolute; left: 0; font-weight: bold; font-size: 1.2em; }
+        .premium-group { background: var(--bg-taupe); padding: 20px; border-radius: 12px; margin-top: 20px; text-align: left; border: 1px solid var(--gold-base); }
+        .premium-title { font-family: 'Merriweather', serif; font-size: 0.9em; text-transform: uppercase; color: var(--gold-dark); font-weight: bold; margin-bottom: 12px; letter-spacing: 1px; }
+
+        /* --- MODAL --- */
+        .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        .modal-content { max-width: 90%; max-height: 90%; border-radius: 12px; border: 3px solid var(--gold-base); }
+        .close { position: absolute; top: 20px; right: 35px; color: var(--gold-base); font-size: 50px; font-weight: bold; cursor: pointer; transition: color 0.3s; }
+        .close:hover { color: var(--gold-shine); }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--dark-section);
+            color: #aaa;
+            text-align: center;
+            padding: 80px 20px;
+            border-top: 5px solid var(--gold-base);
+            position: relative;
+        }
+        
+        /* Gold Dust Effect on Footer */
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Placeholder for gold dust image. */
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .creator-note {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--gold-base);
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #ccc;
+            position: relative;
+        }
+        
+        .creator-note p strong {
+             color: var(--gold-base);
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 900px) {
+            .who-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            .center-image-container { order: -1; }
+            .list-column { text-align: left; }
+            .links-grid { grid-template-columns: 1fr; gap: 30px; }
+            section { padding: 60px 20px; }
+            header { padding: 30px 0; }
+            .hero { padding: 40px 20px; }
+            .hero h1 { font-size: 3.5em; }
+            section h2 { font-size: 3em; }
+        }
+
+        @media (max-width: 600px) {
+            .email-signup input { width: 100%; }
+            .accordion-btn { padding: 20px; }
+            .accordion-btn h4 { font-size: 1.1em; }
+            .logo { max-width: 90%; }
+            h1.gold-brush { font-size: 3em; }
+            section h2.gold-brush { font-size: 2.5em; }
+            section::after { width: 200px; height: 100px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <img src="https://raw.githubusercontent.com/simplerlifeao-pixel/kintsugi-images/refs/heads/main/bowl%20clear%20background.png" alt="The Kintsugi Process Bowl" class="logo">
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1 class="gold-brush">The Kintsugi Process</h1>
+            <h2>An Online Workshop Community</h2>
+            <p class="tagline">Even broken things can shine.</p>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="email-signup">
+                <h3 class="gold-brush">Join the Waitlist Anonymously</h3>
+                <p>We'll be launching a free founding cohort soon. Sign up to be notified.</p>
+                <input type="email" placeholder="Your email address" id="emailInput">
+                <button onclick="submitEmail()">Join Waitlist</button>
+            </div>
+            
+            <div style="max-width: 800px; margin: 60px auto; text-align: center; font-size: 1.3em;">
+                <p><strong>This is true anonymity. Not therapy. Not coaching.</strong></p>
+                <p style="margin-top: 20px;">Socratic method guidance through self-reflection and somatic integration principles. Based on ancient wisdom and tried and true psychology practices.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="gold-brush">Who This Is For (And Who It's Not)</h2>
+            
+            <div class="who-grid">
+                <div class="list-column for">
+                    <h3 class="gold-brush">Who This Is For</h3>
+                    <ul>
+                        <li>People 1+ year post-rupture</li>
+                        <li>Ready for self-accountability</li>
+                        <li>Financially stable</li>
+                        <li>Spiritually curious</li>
+                        <li>Open to somatic/creative process</li>
+                        <li>Ready for a structured journey</li>
+                    </ul>
+                </div>
+
+                <div class="center-image-container">
+                    <img src="https://raw.githubusercontent.com/simplerlifeao-pixel/kintsugi-images/main/The%20Kinsugi%20Process%20e-book%20cover%20.png" alt="Healing Image">
+                </div>
+
+                <div class="list-column not-for">
+                    <h3 class="gold-brush">Who This Is NOT For</h3>
+                    <ul>
+                        <li>People still in active crisis mode</li>
+                        <li>Those needing professional therapy</li>
+                        <li>Not taking accountability</li>
+                        <li>Not financially stable</li>
+                        <li>Not spiritually curious</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="gold-brush">Learn More About The Process</h2>
+            
+            <div class="links-grid">
+                <div class="link-column">
+                    <h3 class="gold-brush">Podcasts</h3>
+                    <p>These podcasts will give you an overview of the Kintsugi Process and help you understand if this journey is right for you.</p>
+                    
+                    <a href="https://copilot.microsoft.com/shares/podcasts/YRhAGqv2x9xpfzPTqyD3w" target="_blank" class="link-card">
+                        <div class="link-icon">🎙️</div>
+                        <div class="link-info">
+                            <h4>Broken Made Beautiful</h4>
+                            <p>Listen to the introduction to our healing philosophy.</p>
+                        </div>
+                    </a>
+
+                    <a href="https://copilot.microsoft.com/shares/podcasts/ig2fpYwwJM4Zu2Ebuq7TJ" target="_blank" class="link-card">
+                        <div class="link-icon">🎙️</div>
+                        <div class="link-info">
+                            <h4>Broken Made Gold</h4>
+                            <p>Explore the process of turning rupture into resilience.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="link-column">
+                    <h3 class="gold-brush">Inspirational Music</h3>
+                    <p>These songs offer inspiration as well as a preview of personal AI collaboration with music creation for your own healing.</p>
+                    
+                    <a href="https://suno.com/s/8S85C8g0BYaSN8fa" target="_blank" class="link-card">
+                        <div class="link-icon">🎵</div>
+                        <div class="link-info">
+                            <h4>Golden Seam</h4>
+                            <p>A melodic reflection on the beauty of repair.</p>
+                        </div>
+                    </a>
+
+                    <a href="https://suno.com/s/i6WRg4ezUlyaKBmC" target="_blank" class="link-card">
+                        <div class="link-icon">🎵</div>
+                        <div class="link-info">
+                            <h4>I'm Still Here</h4>
+                            <p>An anthem for persistence and reconstruction.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="gold-brush">The 12-Week Journey</h2>
+
+            <div class="flow-trigger-container" onclick="openModal(this.querySelector('img'))">
+                <p class="zoom-hint">🔍 Click Diagram to Zoom</p>
+                <img src="https://raw.githubusercontent.com/simplerlifeao-pixel/kintsugi-images/main/The%20Kinsugi%20Process%20Flow%20Chart.png" alt="Course Flow" class="flow-image-preview">
+            </div>
+
+            <div style="margin-top: 50px;">
+                
+                <div class="accordion-wrapper">
+                    <button class="accordion-btn">
+                        <h4>Week 1: The Observer Awakens</h4>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="content-inner">
+                            <p><strong>Phase:</strong> Rupture & Survival</p>
+                            <p>You are not the voice in your head—you are the one who hears it. The rupture has shattered your old identity. This week, you learn that beneath the chaos of thoughts and emotions, there exists a silent observer—your true self.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-wrapper">
+                    <button class="accordion-btn">
+                        <h4>Week 2: The End of the Old Story</h4>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="content-inner">
+                            <p><strong>Phase:</strong> Rupture & Survival</p>
+                            <p>Suffering arises from clinging to who you thought you were. Letting go of who you were is not death—it's the prerequisite for rebirth.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-wrapper">
+                    <button class="accordion-btn">
+                        <h4>Week 3: The Power of Now</h4>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="content-inner">
+                            <p><strong>Phase:</strong> Stabilization</p>
+                            <p>The only moment you can act with integrity is this one. You cannot change the past. But right now, you can choose differently.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-wrapper">
+                    <button class="accordion-btn">
+                        <h4>Week 4: The Middle Path</h4>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="content-inner">
+                            <p><strong>Phase:</strong> Stabilization</p>
+                            <p>Healing requires balance—neither self-destruction nor self-delusion. Walk the razor's edge: fully accountable yet not annihilated.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-wrapper">
+                    <button class="accordion-btn">
+                        <h4>Week 5: The Law of Mirroring</h4>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="content-inner">
+                            <p><strong>Phase:</strong> Confrontation</p>
+                            <p>What you judge in others reflects what you haven't faced in yourself. Dismantle the "us vs. them" thinking that enabled harm.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-wrapper">
+                    <button class="accordion-btn">
+                        <h4>Week 6: Energy and Intention</h4>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="content-inner">
+                            <p><strong>Phase:</strong> Confrontation</p>
+                            <p>You are energy in motion—what you focus on, you amplify. Learn to consciously direct your energy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-wrapper">
+                    <button class="accordion-btn">
+                        <h4>Week 7: Aligned Action</h4>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="content-inner">
+                            <p><strong>Phase:</strong> Reconstruction</p>
+                            <p>Real change flows from alignment, not force. Stop resisting reality and start moving with it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-wrapper">
+                    <button class="accordion-btn">
+                        <h4>Week 8: Beyond Labels</h4>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="content-inner">
+                            <p><strong>Phase:</strong> Reconstruction</p>
+                            <p>Your labels and categories are constructs—beneath them, everything is connected. Dissolve binary thinking.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-wrapper">
+                    <button class="accordion-btn">
+                        <h4>Week 9: Omens and Synchronicity</h4>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="content-inner">
+                            <p><strong>Phase:</strong> Integration</p>
+                            <p>Life speaks through patterns—learn to recognize the signals. When you align with your values, doors open.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-wrapper">
+                    <button class="accordion-btn">
+                        <h4>Week 10: The Soul's Evolution</h4>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="content-inner">
+                            <p><strong>Phase:</strong> Integration</p>
+                            <p>This rupture is part of your soul's curriculum. This experience is teaching you something your soul needed to know.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-wrapper">
+                    <button class="accordion-btn">
+                        <h4>Week 11: The Four Agreements</h4>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="content-inner">
+                            <p><strong>Phase:</strong> Forward Identity</p>
+                            <p>Your integrity is built through daily commitments. A practical framework for becoming someone whose word means something again.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-wrapper">
+                    <button class="accordion-btn">
+                        <h4>Week 12: The Golden Eternity</h4>
+                    </button>
+                    <div class="accordion-panel">
+                        <div class="content-inner">
+                            <p><strong>Phase:</strong> Forward Identity</p>
+                            <p>You are the break and the repair—both are necessary. You are the conscious choice, made repeatedly, to live aligned.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="gold-brush">The Practices</h2>
+
+            <div class="accordion-wrapper">
+                <button class="accordion-btn">
+                    <h4>The Kintsugi Ritual of Repair</h4>
+                </button>
+                <div class="accordion-panel">
+                    <div class="content-inner">
+                        <p><strong>Purpose:</strong> To embody responsibility, grief, and integration through a deliberate physical act.</p>
+                        <ul style="margin-left: 25px; margin-top: 20px;">
+                            <li><strong>Step 1:</strong> Naming the Old Form ("This form could not hold the truth")</li>
+                            <li><strong>Step 2:</strong> The Breaking (Recognition, not destruction)</li>
+                            <li><strong>Step 3:</strong> Gathering the Pieces ("Nothing is excluded")</li>
+                            <li><strong>Step 4:</strong> The Gold Bond (Honesty, Responsibility, Witnessed Truth)</li>
+                            <li><strong>Step 5:</strong> Integration ("I live as who I am becoming")</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-wrapper">
+                <button class="accordion-btn">
+                    <h4>Guided Meditation: From Witness to Repair</h4>
+                </button>
+                <div class="accordion-panel">
+                    <div class="content-inner">
+                        <p><strong>Purpose:</strong> To orient awareness beyond ego, steady the nervous system, and consciously transition into the Kintsugi Pottery Ritual.</p>
+                        <p><strong>Length:</strong> 12-15 minutes</p>
+                        <ul style="margin-left: 25px; margin-top: 20px;">
+                            <li>Arriving & Settling the Mind</li>
+                            <li>Finding The Witness</li>
+                            <li>Visualizing The Vessel</li>
+                            <li>Transition to Repair</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-wrapper">
+                <button class="accordion-btn">
+                    <h4>Understanding The Metaphor</h4>
+                </button>
+                <div class="accordion-panel">
+                    <div class="content-inner">
+                        <p>Think of your life as a handmade clay vessel. Not factory-made. Not perfect. Shaped slowly by experience.</p>
+                        <p>A moral failure is not a crack. It is a shattering. Kintsugi does not rush to hide the damage. It repairs with gold—representing radical honesty and responsibility.</p>
+                        <p><strong>The result:</strong> A vessel more fragile in some ways, but stronger at the seams. Impossible to fake.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="gold-brush">Investment in Your Transformation</h2>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h4 class="gold-brush">Self-Paced Course</h4>
+                    <div class="price gold-brush">$697</div>
+                    <ul class="pricing-list">
+                        <li>Recorded "perfect cohort" sessions</li>
+                        <li>Full 12-week curriculum</li>
+                        <li>Workbook and exercises</li>
+                        <li>Lifetime access</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card" style="transform: scale(1.05); z-index: 2; border-width: 3px; box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);">
+                    <h4 class="gold-brush">Live Cohort Program</h4>
+                    <div class="price gold-brush">$1,997</div>
+                    <ul class="pricing-list">
+                        <li><strong>12-week live program</strong> (Small groups)</li>
+                        <li>Weekly facilitated calls</li>
+                    </ul>
+
+                    <div class="premium-group">
+                        <div class="premium-title">Included Physical Tools</div>
+                        <ul class="pricing-list" style="margin-top:0;">
+                            <li>Physical Kintsugi gold repair kit</li>
+                            <li>Custom Journals & Workbooks</li>
+                            <li>Growth Card Decks</li>
+                        </ul>
+                    </div>
+
+                    <div class="premium-group">
+                        <div class="premium-title">Digital & Support</div>
+                        <ul class="pricing-list" style="margin-top:0;">
+                            <li>Music Creation AI Platform Access</li>
+                            <li>Daily Reminder System</li>
+                            <li>Private Community Access</li>
+                            <li>Enhanced Accountability Structures</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <h4 class="gold-brush">Mini-Courses</h4>
+                    <div class="price gold-brush">$97+</div>
+                    <ul class="pricing-list">
+                        <li>Focused deep-dives</li>
+                        <li>Standalone topics</li>
+                        <li>Supplementary material</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            
+            <div class="creator-note">
+                <p>Built by a creator with lived experience of deep moral failure, incarceration, and years of intensive rehabilitation work. A dignified path to rebuilding identity.</p>
+                <p style="margin-top: 20px; font-weight: bold; font-size: 1.2em;" class="gold-brush">You're not paying for theory. You're investing in a proven process that has already worked.</p>
+            </div>
+
+            <p>Your privacy is absolute. We do not sell data.</p>
+            <br>
+            <p>© 2025 The Kintsugi Process.</p>
+        </div>
+    </footer>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // 1. Accordion Logic
+        var acc = document.getElementsByClassName("accordion-btn");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+
+        // 2. Email Logic
+        function submitEmail() {
+            const email = document.getElementById('emailInput').value;
+            if (email && email.includes('@')) {
+                alert('Thank you for joining the waitlist!');
+                document.getElementById('emailInput').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+
+        // 3. Modal Logic
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("img01");
+        var span = document.getElementsByClassName("close")[0];
+
+        function openModal(element) {
+            modal.style.display = "flex";
+            modalImg.src = element.src;
+        }
+
+        span.onclick = function() { modal.style.display = "none"; }
+        
+        modal.onclick = function(event) {
+            if (event.target == modal) { modal.style.display = "none"; }
+        }
+    </script>
+
+</body>
+</html>

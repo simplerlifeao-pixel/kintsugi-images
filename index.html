@@ -117,7 +117,6 @@
             margin: 15px auto 0;
         }
 
-
         /* --- WHO THIS IS FOR --- */
         .who-grid {
             display: grid;
@@ -183,7 +182,6 @@
         .link-info h4 { color: var(--text-dark); margin-bottom: 5px; font-size: 1.1em; font-weight: bold; }
         .link-info p { color: #666; font-size: 0.9em; margin: 0; line-height: 1.4; }
 
-
         /* --- COURSE FLOW IMAGE --- */
         .flow-trigger-container {
             text-align: center;
@@ -213,12 +211,11 @@
             display: flex; 
             justify-content: space-between; 
             align-items: center;
-            /* MOBILE FIXES: */
-            touch-action: manipulation; /* Removes tap delay on mobile */
-            -webkit-tap-highlight-color: transparent; /* Removes blue/grey tap box */
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
         
-        .accordion-btn h4 { font-size: 1.2em; color: var(--gold-dark); margin: 0; pointer-events: none; /* Ensures click hits button */ }
+        .accordion-btn h4 { font-size: 1.2em; color: var(--gold-dark); margin: 0; pointer-events: none; }
         .accordion-btn::after { content: '+'; font-size: 20px; color: var(--gold-base); font-weight: bold; }
         .accordion-btn.active { background-color: #fafafa; }
         .accordion-btn.active::after { content: '-'; }
@@ -247,7 +244,6 @@
         }
         .pricing-card:hover { transform: translateY(-10px); }
         .pricing-card h4 { font-size: 1.5em; margin-bottom: 10px; }
-        .price { font-size: 2.5em; color: var(--gold-base); font-weight: bold; margin: 20px 0; }
         .pricing-list { text-align: left; margin-top: 20px; list-style: none; }
         .pricing-list li { margin-bottom: 10px; padding-left: 20px; position: relative; font-size: 0.95em; color: #555; }
         .pricing-list li::before { content: "•"; color: var(--gold-base); position: absolute; left: 0; font-weight: bold; }
@@ -280,14 +276,10 @@
 
         /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 900px) {
-            /* Stack the Who This Is For section */
             .who-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
             .center-image-container { order: -1; }
             .list-column { text-align: left; }
-
-            /* Stack the Resources Section */
             .links-grid { grid-template-columns: 1fr; gap: 30px; }
-            
             section { padding: 50px 20px; }
             header { padding: 30px 0; }
             .hero { padding: 30px 20px; }
@@ -296,7 +288,6 @@
         }
 
         @media (max-width: 600px) {
-            .email-signup input { width: 100%; }
             .accordion-btn { padding: 20px; }
             .accordion-btn h4 { font-size: 1.1em; }
             .logo { max-width: 90%; }
@@ -321,14 +312,7 @@
 
     <section>
         <div class="container">
-            <div class="email-signup">
-                <h3>Join the Waitlist Anonymously</h3>
-                <p>We'll be launching a free founding cohort soon. Sign up to be notified.</p>
-                <input type="email" placeholder="Your email address" id="emailInput">
-                <button onclick="submitEmail()">Join Waitlist</button>
-            </div>
-            
-            <div style="max-width: 800px; margin: 50px auto; text-align: center; font-size: 1.2em;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.2em;">
                 <p><strong>This is true anonymity. Not therapy. Not coaching.</strong></p>
                 <p style="margin-top: 15px;">Socratic method guidance through self-reflection and somatic integration principles. Based on ancient wisdom and tried and true psychology practices.</p>
             </div>
@@ -338,7 +322,6 @@
     <section>
         <div class="container">
             <h2>Who This Is For (And Who It's Not)</h2>
-            
             <div class="who-grid">
                 <div class="list-column for">
                     <h3>Who This Is For</h3>
@@ -373,12 +356,10 @@
     <section>
         <div class="container">
             <h2>Learn More About The Process</h2>
-            
             <div class="links-grid">
                 <div class="link-column">
                     <h3>Podcasts</h3>
-                    <p>These podcasts will give you an overview of the Kintsugi Process and help you understand if this journey is right for you.</p>
-                    
+                    <p>These podcasts will give you an overview of the Kintsugi Process.</p>
                     <a href="https://copilot.microsoft.com/shares/podcasts/YRhAGqv2x9xpfzPTqyD3w" target="_blank" class="link-card">
                         <div class="link-icon">🎙️</div>
                         <div class="link-info">
@@ -386,33 +367,16 @@
                             <p>Listen to the introduction to our healing philosophy.</p>
                         </div>
                     </a>
-
-                    <a href="https://copilot.microsoft.com/shares/podcasts/ig2fpYwwJM4Zu2Ebuq7TJ" target="_blank" class="link-card">
-                        <div class="link-icon">🎙️</div>
-                        <div class="link-info">
-                            <h4>Broken Made Gold</h4>
-                            <p>Explore the process of turning rupture into resilience.</p>
-                        </div>
-                    </a>
                 </div>
 
                 <div class="link-column">
                     <h3>Inspirational Music</h3>
-                    <p>These songs offer inspiration as well as a preview of personal AI collaboration with music creation for your own healing.</p>
-                    
+                    <p>These songs offer inspiration and a preview of personal AI collaboration.</p>
                     <a href="https://suno.com/s/8S85C8g0BYaSN8fa" target="_blank" class="link-card">
                         <div class="link-icon">🎵</div>
                         <div class="link-info">
                             <h4>Golden Seam</h4>
                             <p>A melodic reflection on the beauty of repair.</p>
-                        </div>
-                    </a>
-
-                    <a href="https://suno.com/s/i6WRg4ezUlyaKBmC" target="_blank" class="link-card">
-                        <div class="link-icon">🎵</div>
-                        <div class="link-info">
-                            <h4>I'm Still Here</h4>
-                            <p>An anthem for persistence and reconstruction.</p>
                         </div>
                     </a>
                 </div>
@@ -423,358 +387,74 @@
     <section>
         <div class="container">
             <h2>The 12-Week Journey</h2>
-
             <div class="flow-trigger-container" onclick="openModal(this.querySelector('img'))">
                 <p class="zoom-hint">🔍 Click Diagram to Zoom</p>
                 <img src="https://raw.githubusercontent.com/simplerlifeao-pixel/kintsugi-images/main/The%20Kinsugi%20Process%20Flow%20Chart.png" alt="Course Flow" class="flow-image-preview">
             </div>
 
             <div style="margin-top: 40px;">
-                
                 <div class="accordion-wrapper">
-                    <button class="accordion-btn">
-                        <h4>Week 1: The Observer Awakens</h4>
-                    </button>
+                    <button class="accordion-btn"><h4>Week 1: The Observer Awakens</h4></button>
                     <div class="accordion-panel">
                         <div class="content-inner">
                             <p><strong>Phase:</strong> Rupture & Survival</p>
-                            <p>You are not the voice in your head—you are the one who hears it. The rupture has shattered your old identity. This week, you learn that beneath the chaos of thoughts and emotions, there exists a silent observer—your true self.</p>
+                            <p>Learn that beneath the chaos of thoughts, there exists a silent observer—your true self.</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="accordion-wrapper">
-                    <button class="accordion-btn">
-                        <h4>Week 2: The End of the Old Story</h4>
-                    </button>
-                    <div class="accordion-panel">
-                        <div class="content-inner">
-                            <p><strong>Phase:</strong> Rupture & Survival</p>
-                            <p>Suffering arises from clinging to who you thought you were. Letting go of who you were is not death—it's the prerequisite for rebirth.</p>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="accordion-wrapper">
-                    <button class="accordion-btn">
-                        <h4>Week 3: The Power of Now</h4>
-                    </button>
-                    <div class="accordion-panel">
-                        <div class="content-inner">
-                            <p><strong>Phase:</strong> Stabilization</p>
-                            <p>The only moment you can act with integrity is this one. You cannot change the past. But right now, you can choose differently.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-wrapper">
-                    <button class="accordion-btn">
-                        <h4>Week 4: The Middle Path</h4>
-                    </button>
-                    <div class="accordion-panel">
-                        <div class="content-inner">
-                            <p><strong>Phase:</strong> Stabilization</p>
-                            <p>Healing requires balance—neither self-destruction nor self-delusion. Walk the razor's edge: fully accountable yet not annihilated.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-wrapper">
-                    <button class="accordion-btn">
-                        <h4>Week 5: The Law of Mirroring</h4>
-                    </button>
-                    <div class="accordion-panel">
-                        <div class="content-inner">
-                            <p><strong>Phase:</strong> Confrontation</p>
-                            <p>What you judge in others reflects what you haven't faced in yourself. Dismantle the "us vs. them" thinking that enabled harm.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-wrapper">
-                    <button class="accordion-btn">
-                        <h4>Week 6: Energy and Intention</h4>
-                    </button>
-                    <div class="accordion-panel">
-                        <div class="content-inner">
-                            <p><strong>Phase:</strong> Confrontation</p>
-                            <p>You are energy in motion—what you focus on, you amplify. Learn to consciously direct your energy.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-wrapper">
-                    <button class="accordion-btn">
-                        <h4>Week 7: Aligned Action</h4>
-                    </button>
-                    <div class="accordion-panel">
-                        <div class="content-inner">
-                            <p><strong>Phase:</strong> Reconstruction</p>
-                            <p>Real change flows from alignment, not force. Stop resisting reality and start moving with it.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-wrapper">
-                    <button class="accordion-btn">
-                        <h4>Week 8: Beyond Labels</h4>
-                    </button>
-                    <div class="accordion-panel">
-                        <div class="content-inner">
-                            <p><strong>Phase:</strong> Reconstruction</p>
-                            <p>Your labels and categories are constructs—beneath them, everything is connected. Dissolve binary thinking.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-wrapper">
-                    <button class="accordion-btn">
-                        <h4>Week 9: Omens and Synchronicity</h4>
-                    </button>
-                    <div class="accordion-panel">
-                        <div class="content-inner">
-                            <p><strong>Phase:</strong> Integration</p>
-                            <p>Life speaks through patterns—learn to recognize the signals. When you align with your values, doors open.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-wrapper">
-                    <button class="accordion-btn">
-                        <h4>Week 10: The Soul's Evolution</h4>
-                    </button>
-                    <div class="accordion-panel">
-                        <div class="content-inner">
-                            <p><strong>Phase:</strong> Integration</p>
-                            <p>This rupture is part of your soul's curriculum. This experience is teaching you something your soul needed to know.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-wrapper">
-                    <button class="accordion-btn">
-                        <h4>Week 11: The Four Agreements</h4>
-                    </button>
-                    <div class="accordion-panel">
-                        <div class="content-inner">
-                            <p><strong>Phase:</strong> Forward Identity</p>
-                            <p>Your integrity is built through daily commitments. A practical framework for becoming someone whose word means something again.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-wrapper">
-                    <button class="accordion-btn">
-                        <h4>Week 12: The Golden Eternity</h4>
-                    </button>
-                    <div class="accordion-panel">
-                        <div class="content-inner">
-                            <p><strong>Phase:</strong> Forward Identity</p>
-                            <p>You are the break and the repair—both are necessary. You are the conscious choice, made repeatedly, to live aligned.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2>The Practices</h2>
-
-            <div class="accordion-wrapper">
-                <button class="accordion-btn">
-                    <h4>The Kintsugi Ritual of Repair</h4>
-                </button>
-                <div class="accordion-panel">
-                    <div class="content-inner">
-                        <p><strong>Purpose:</strong> To embody responsibility, grief, and integration through a deliberate physical act.</p>
-                        <ul style="margin-left: 20px; margin-top: 15px;">
-                            <li><strong>Step 1:</strong> Naming the Old Form ("This form could not hold the truth")</li>
-                            <li><strong>Step 2:</strong> The Breaking (Recognition, not destruction)</li>
-                            <li><strong>Step 3:</strong> Gathering the Pieces ("Nothing is excluded")</li>
-                            <li><strong>Step 4:</strong> The Gold Bond (Honesty, Responsibility, Witnessed Truth)</li>
-                            <li><strong>Step 5:</strong> Integration ("I live as who I am becoming")</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-wrapper">
-                <button class="accordion-btn">
-                    <h4>Guided Meditation: From Witness to Repair</h4>
-                </button>
-                <div class="accordion-panel">
-                    <div class="content-inner">
-                        <p><strong>Purpose:</strong> To orient awareness beyond ego, steady the nervous system, and consciously transition into the Kintsugi Pottery Ritual.</p>
-                        <p><strong>Length:</strong> 12-15 minutes</p>
-                        <ul style="margin-left: 20px; margin-top: 15px;">
-                            <li>Arriving & Settling the Mind</li>
-                            <li>Finding The Witness</li>
-                            <li>Visualizing The Vessel</li>
-                            <li>Transition to Repair</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-wrapper">
-                <button class="accordion-btn">
-                    <h4>Understanding The Metaphor</h4>
-                </button>
-                <div class="accordion-panel">
-                    <div class="content-inner">
-                        <p>Think of your life as a handmade clay vessel. Not factory-made. Not perfect. Shaped slowly by experience.</p>
-                        <p>A moral failure is not a crack. It is a shattering. Kintsugi does not rush to hide the damage. It repairs with gold—representing radical honesty and responsibility.</p>
-                        <p><strong>The result:</strong> A vessel more fragile in some ways, but stronger at the seams. Impossible to fake.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-wrapper">
-                <button class="accordion-btn">
-                    <h4>AI Music Creation & Somatic Healing</h4>
-                </button>
-                <div class="accordion-panel">
-                    <div class="content-inner">
-                        <p>Use AI music creation tools to create your own lyrics and music even without music skills.</p>
-                        <p style="margin-top: 15px;">Your songs will become a healing practice of listening and somatic healing through feeling the emotion flowing through you during the music healing sessions which can become a part of your daily life.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2>Investment in Your Transformation</h2>
-            
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h4>Self-Paced Course</h4>
-                    <ul class="pricing-list">
-                        <li>Recorded "perfect cohort" sessions</li>
-                        <li>Full 12-week curriculum</li>
-                        <li>Workbook and exercises</li>
-                        <li>Lifetime access</li>
-                    </ul>
-                </div>
-                
-                <div class="pricing-card" style="border-top: 6px solid var(--gold-base); transform: scale(1.02);">
-                    <h4>Live Cohort Program</h4>
-                    <ul class="pricing-list">
-                        <li><strong>12-week live program</strong> (Small groups)</li>
-                        <li>Weekly facilitated calls</li>
-                    </ul>
-
-                    <div class="premium-group" style="background-color: white;">
-                        <div class="premium-title">Included Physical Tools</div>
-                        <ul class="pricing-list" style="margin-top:0;">
-                            <li>Physical Kintsugi gold repair kit</li>
-                            <li>Custom Journals & Workbooks</li>
-                            <li>Growth Card Decks</li>
-                        </ul>
-                    </div>
-
-                    <div class="premium-group" style="background-color: white;">
-                        <div class="premium-title">Digital & Support</div>
-                        <ul class="pricing-list" style="margin-top:0;">
-                            <li>Music Creation AI Platform Access</li>
-                            <li>Daily Reminder System</li>
-                            <li>Private Community Access</li>
-                            <li>Enhanced Accountability Structures</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="pricing-card">
-                    <h4>Mini-Courses</h4>
-                       <ul class="pricing-list">
-                        <li>Focused deep-dives</li>
-                        <li>Standalone topics</li>
-                        <li>Supplementary material</li>
-                    </ul>
-                </div>
-            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            
             <div class="creator-note">
-                <p>Built by a creator with lived experience of deep moral failure, incarceration, and years of intensive rehabilitation work. A dignified path to rebuilding identity.</p>
-                <p style="margin-top: 15px; font-weight: bold; color: var(--gold-base);">You're not paying for theory. You're investing in a proven process that has already worked.</p>
+                <p>Built by a creator with lived experience of deep moral failure and years of intensive rehabilitation work.</p>
+                <p style="margin-top: 15px; font-weight: bold; color: var(--gold-base);">You're investing in a proven process that has already worked.</p>
             </div>
-
-            <p>Your privacy is absolute. We do not sell data.</p>
-            <br>
-            <p>© 2025 The Kintsugi Process.</p>
+            <p>Your privacy is absolute. © 2025 The Kintsugi Process.</p>
         </div>
     </footer>
 
     <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
+        <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="img01">
     </div>
 
     <script>
-        // Ensure scripts run after DOM is fully loaded
         document.addEventListener('DOMContentLoaded', function() {
-            
-            // 1. Accordion Logic (Updated for Mobile robustness)
             var acc = document.querySelectorAll(".accordion-btn");
-            
             acc.forEach(function(button) {
                 button.addEventListener("click", function(e) {
-                    // Prevent default behavior just in case
                     e.preventDefault(); 
-                    
-                    // Toggle Active Class
                     this.classList.toggle("active");
-                    
-                    // Toggle Panel Height
                     var panel = this.nextElementSibling;
                     if (panel.style.maxHeight) {
                         panel.style.maxHeight = null;
                     } else {
-                        // Recalculate height to include padding
                         panel.style.maxHeight = panel.scrollHeight + "px";
-                    } 
+                    }
                 });
             });
+        });
 
-            // 2. Email Logic
-            window.submitEmail = function() {
-                const email = document.getElementById('emailInput').value;
-                if (email && email.includes('@')) {
-                    alert('Thank you for joining the waitlist!');
-                    document.getElementById('emailInput').value = '';
-                } else {
-                    alert('Please enter a valid email address.');
-                }
-            };
-
-            // 3. Modal Logic
+        function openModal(img) {
             var modal = document.getElementById("imageModal");
             var modalImg = document.getElementById("img01");
-            var span = document.getElementsByClassName("close")[0];
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+        }
 
-            // Make openModal available globally
-            window.openModal = function(element) {
-                modal.style.display = "flex";
-                modalImg.src = element.src;
-            };
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
 
-            span.onclick = function() { modal.style.display = "none"; }
-            
-            modal.onclick = function(event) {
-                if (event.target == modal) { modal.style.display = "none"; }
+        window.onclick = function(event) {
+            var modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                closeModal();
             }
-        });
+        }
     </script>
-
 </body>
 </html>
